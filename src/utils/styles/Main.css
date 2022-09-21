@@ -1,0 +1,16 @@
+main {
+    position: fixed;
+    left: 8em;
+    padding: 2.5em 5em;
+}
+
+main h1 {
+    font-size: 3em;
+    font-weight: 500;
+    margin: 0.5em 0;
+}
+
+main p {
+    font-size: 1.125em;
+    margin: 0.3em 0;
+}
