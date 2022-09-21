@@ -1,9 +1,14 @@
-export default function KeyDataCard({img, amount, type}) {
+import '../utils/styles/KeyDataCard.css'
+
+export default function KeyDataCard({ img, amount, type }) {
+
     return (
         <div className="info-card">
             <img src={img} alt="card icon" />
-            <h3>{amount}</h3>
-            <p>{type}</p>
+            <div>
+                <h3>{amount.toLocaleString()}{type === 'Calories' ? ' kCal' : ' g'}</h3>
+                <p>{type}</p>
+            </div>
         </div>
     )
 }
