@@ -2,3 +2,10 @@
     font-family: sans-serif;
     text-align: center;
   }
+
+.custom-tooltip {
+  background-color: #E60000;
+  padding: 1.7em 1em;
+  color: #FFFFFF;
+  font-size: 0.45em;
+}
