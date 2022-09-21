@@ -10,6 +10,19 @@ import {
   Legend
 } from "recharts";
 
+const CustomToolTip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${payload[0].value} kg`}</p>
+        <p className="label">{`${payload[1].value} kCal`}</p>
+      </div>
+    );
+  }
+
+  return null;
+}
+
 export default function App() {
 
   const [userActivity, setUserActivity] = useState([])
@@ -40,7 +53,8 @@ export default function App() {
         vertical={false}
         strokeDasharray="3 3" 
       />
-      <XAxis 
+      <XAxis
+        dataKey="day"
         tickLine={false}
         stroke="#DEDEDE"
       />
@@ -49,9 +63,12 @@ export default function App() {
         tickLine={false} 
         axisLine={false}
       />
-      <Tooltip 
-        wrapperStyle={{border: "none"}}
-        contentStyle={{ backgroundColor: "#E60000"}}
+      <Tooltip
+        offset={20}
+        allowEscapeViewBox={{ x: true }}
+        payload={userActivity}
+        content={<CustomToolTip />}  
+        wrapperStyle={{ outline: "none" }}
         itemStyle={{ color: "#FFFFFF", fontSize: 7 }}
       />
       <Legend 
