@@ -1,0 +1,31 @@
+.info-card {
+    display: flex;
+    align-items: center;
+    background-color: #FBFBFB;
+    border-radius: 0.3em;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.info-card img {
+    margin-right: 1.5em;
+}
+
+.info-card div {
+    margin-right: 1em;
+}
+
+.info-card h3 {
+    font-size: 1.2em;
+}
+
+.info-card p {
+    margin-top: 0.5em;
+    font-size: 0.875em;
+    color: #74798C;
+}
+
+.info-card * {
+    margin: 0;
+}
