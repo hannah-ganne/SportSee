@@ -1,7 +1,10 @@
 main {
     position: fixed;
     left: 8em;
+    width: 100vw;
+    height: calc(100vh - 5.4em);
     padding: 2.5em 5em;
+    overflow: scroll;
 }
 
 main h1 {
@@ -13,4 +16,8 @@ main h1 {
 main p {
     font-size: 1.125em;
     margin: 0.3em 0;
+}
+
+.key-data {
+    width: 16em;
 }
