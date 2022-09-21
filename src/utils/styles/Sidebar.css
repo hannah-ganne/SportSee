@@ -1,0 +1,32 @@
+aside {
+    position: relative;
+    background-color: #020203;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 5.5em;
+    width: 7.5em;
+    height: calc(100% - 5.5em);
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav a img {
+    margin-bottom: 0.7em;
+}
+
+aside p {
+    color: #FFFFFF;
+    font-size: 0.75em;
+    transform: rotate(270deg);
+    margin: 0;
+    width: 12em;
+    position: absolute;
+    bottom: 10em;
+}
