@@ -6,7 +6,7 @@ export default function KeyDataCard({ img, amount, type }) {
         <div className="info-card">
             <img src={img} alt="card icon" />
             <div>
-                <h3>{amount.toLocaleString()}{type === 'Calories' ? ' kCal' : ' g'}</h3>
+                <h3>{amount && amount.toLocaleString()}{type === 'Calories' ? ' kCal' : ' g'}</h3>
                 <p>{type}</p>
             </div>
         </div>

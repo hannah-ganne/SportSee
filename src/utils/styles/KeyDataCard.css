@@ -3,9 +3,10 @@
     align-items: center;
     background-color: #FBFBFB;
     border-radius: 0.3em;
-    padding: 1.5em;
+    padding: 2em;
     margin-bottom: 2em;
-    width: 100%;
+    width: 16.125em;
+    height: 7.75em;
 }
 
 .info-card img {

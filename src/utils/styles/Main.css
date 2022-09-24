@@ -18,6 +18,100 @@ main p {
     margin: 0.3em 0;
 }
 
+.main-charts {
+    margin-top: 4em;
+}
+
+.bar-chart {
+    background-color: #FBFBFB;
+    border-radius: 0.3em;
+}
+
 .key-data {
-    width: 16em;
+    margin-left: 1.875em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.key-data .info-card:last-of-type {
+    margin-bottom: 0;
+}
+
+.chart-container {
+    max-width: 20em;
+    width: fit-content;
+    height: 16.5em;
+    border-radius: 0.3em;
+    margin: 0;
+}
+
+.line-chart {
+    background-color: #FF0000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    padding: 2em 0;
+}
+
+.line-chart h3 {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: hsla(360, 100%, 100%, 0.4);
+    line-height: 1.5em;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    margin: 0;
+}
+
+.radar-chart {
+    background-color: #282D30;
+    padding: 2em 0;
+}
+
+.radial-bar-chart {
+    background-color: #FBFBFB;
+    position: relative;
+}
+
+.radial-bar-chart h3 {
+    margin: 0;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+}
+
+.radial-bar-chart p {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    text-align: center;
+    width: 30%;
+    font-weight: 500;
+    color: #74798C;
+    margin: 0;
+}
+
+.radial-bar-chart p span {
+    display: block;
+    color: #282D30;
+    font-size: 1.625em;
+}
+
+.square-charts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: auto; */
+    margin-top: 1.875em;
+}
+
+.main-charts {
+    width: 52em;
+    display: flex;
 }

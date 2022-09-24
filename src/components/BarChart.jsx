@@ -1,4 +1,4 @@
-import "../utils/styles/CustomBarChart.css";
+import "../utils/styles/BarChart.css";
 import React, { useState, useEffect } from "react";
 import {
   BarChart,
@@ -10,35 +10,34 @@ import {
   Legend
 } from "recharts";
 
-const CustomToolTip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="custom-tooltip">
-        <p className="label">{`${payload[0].value} kg`}</p>
-        <p className="label">{`${payload[1].value} kCal`}</p>
-      </div>
-    );
-  }
-
-  return null;
-}
-
 export default function App() {
 
   const [userActivity, setUserActivity] = useState([])
+
+  const BarChartToolTip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bar-tooltip">
+          <p className="label">{`${payload[0].value} kg`}</p>
+          <p className="label">{`${payload[1].value} kCal`}</p>
+        </div>
+      );
+    }
+  
+    return null;
+  }
     
   useEffect(() => {
     fetch('http://localhost:3000/user/12/activity')
       .then(res => res.json())
       .then(json => {
         setUserActivity(json.data.sessions)
-        console.log(userActivity)
       })
   }, [])
 
   return (
     <BarChart
-      width={835}
+      width={850}
       height={320}
       data={userActivity}
       margin={{
@@ -67,7 +66,7 @@ export default function App() {
         offset={20}
         allowEscapeViewBox={{ x: true }}
         payload={userActivity}
-        content={<CustomToolTip />}  
+        content={<BarChartToolTip />}  
         wrapperStyle={{ outline: "none" }}
         itemStyle={{ color: "#FFFFFF", fontSize: 7 }}
       />
