@@ -40,7 +40,7 @@ main p {
 
 .chart-container {
     max-width: 20em;
-    width: fit-content;
+    width: 270px;
     height: 16.5em;
     border-radius: 0.3em;
     margin: 0;
@@ -52,7 +52,7 @@ main p {
     justify-content: center;
     align-items: flex-end;
     position: relative;
-    padding: 2em 0;
+    padding: 2em 0.9em;
 }
 
 .line-chart h3 {
@@ -68,7 +68,7 @@ main p {
 
 .radar-chart {
     background-color: #282D30;
-    padding: 2em 0;
+    padding: 2em 0.2em;
 }
 
 .radial-bar-chart {
@@ -104,10 +104,6 @@ main p {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: auto; */
     margin-top: 1.875em;
 }
 

@@ -5,12 +5,20 @@ import '../utils/styles/LineChart.css'
 export default function App() {
 
     const [averageSessions, setAverageSessions] = useState([])
+    let sessions = [];
+    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
     
     useEffect(() => {
         fetch('http://localhost:3000/user/12/average-sessions')
             .then(res => res.json())
             .then(json => {
-                setAverageSessions(json.data.sessions)
+                sessions = json.data.sessions
+                sessions.map(item => {
+                    item.day = days[item.day - 1]
+                    return item
+                })
+                setAverageSessions(sessions)
+                console.log(sessions)
             })
     }, [])
     
@@ -24,10 +32,11 @@ export default function App() {
             }
         
             return null;
-        }
+    }
+    
 
     return (
-        <LineChart width={258} height={100} data={averageSessions} >
+        <LineChart width={230} height={100} data={averageSessions} >
             <defs>
                 <linearGradient id="linear">
                 <stop offset="0" stopColor="hsla(360, 100%, 100%, 0.4)" />
@@ -42,7 +51,7 @@ export default function App() {
                 activeDot={{ stroke: 'white', strokeWidth: 5, r: 7 }}
                 dot={false}
             />
-            <XAxis dataKey="day" tickLine={false} axisLine={false}/>
+            <XAxis dataKey="day" stroke="#FFFFFF" tickLine={false} axisLine={false}/>
             <Tooltip
                 offset={10}
                 allowEscapeViewBox={{ x: true }}

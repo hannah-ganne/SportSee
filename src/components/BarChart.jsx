@@ -13,6 +13,30 @@ import {
 export default function App() {
 
   const [userActivity, setUserActivity] = useState([])
+  let sessions;
+    
+  useEffect(() => {
+    const days = ['1', '2', '3', '4', '5', '6', '7']
+
+    fetch('http://localhost:3000/user/12/activity')
+      .then(res => res.json())
+      .then(json => {
+        sessions = json.data.sessions
+        sessions.map((item, index) => {
+          item.day = days[index]
+          return item
+        })
+        setUserActivity(sessions)
+      })
+  }, [])
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/user/12/activity')
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       setUserActivity(json.data.sessions)
+  //     })
+  // }, [])
 
   const BarChartToolTip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -26,14 +50,6 @@ export default function App() {
   
     return null;
   }
-    
-  useEffect(() => {
-    fetch('http://localhost:3000/user/12/activity')
-      .then(res => res.json())
-      .then(json => {
-        setUserActivity(json.data.sessions)
-      })
-  }, [])
 
   return (
     <BarChart
